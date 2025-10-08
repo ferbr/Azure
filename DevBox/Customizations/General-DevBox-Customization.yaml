@@ -1,0 +1,18 @@
+$schema: "1.0"
+name: "General-devbox-customization"
+tasks:
+  - name: winget
+    parameters:
+      package: Google.Chrome
+  - name: winget
+    parameters:
+      package: Mozilla.Firefox
+   - name: winget
+    parameters:
+      package: Zoom.Zoom
+   - name: winget
+    parameters:
+      package: 7zip.7zip
+    - name: winget
+    parameters:
+      package: Spotify.Spotify
