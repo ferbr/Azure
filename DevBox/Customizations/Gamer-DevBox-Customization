@@ -1,0 +1,15 @@
+$schema: "1.0"
+name: "Dev-devbox-customization"
+tasks:
+  - name: winget
+    parameters:
+      package: Mozilla.Firefox.pt-BR
+  - name: winget
+    parameters:
+      package: Discord.Discord
+   - name: winget
+    parameters:
+      package: Valve.Steam
+   - name: winget
+    parameters:
+      package: EpicGames.EpicGamesLauncher
