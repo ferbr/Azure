@@ -1,25 +1,20 @@
 name: "CustomPaulo-devbox-customization"
 image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
-
 tasks:
   - name: winget
     parameters:
       package: Git.Git
-
   - name: winget
     parameters:
       package: Microsoft.AzureCLI
-
   - name: powershell
     parameters:
       command: |
         Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -NoRestart
         exit 0
-
   - name: winget
     parameters:
       package: Docker.DockerDesktop
-
 userTasks:
   - name: powershell
     parameters:
