@@ -1,0 +1,48 @@
+$schema: "1.0"
+name: "CustomID-Hyperv&Docker"
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
+
+tasks:
+  - name: winget
+    parameters:
+      package: Git.Git
+  
+  - name: winget
+    parameters:
+      package: Microsoft.AzureCLI
+  
+  - name: powershell
+    parameters:
+      command: |
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -NoRestart
+        exit 0
+  
+  - name: powershell
+    parameters:
+      command: |
+        shutdown -r -t 00
+        exit 0
+  
+  - name: winget
+    parameters:
+      package: Docker.DockerDesktop
+  
+  - name: powershell
+    parameters:
+      command: |
+        shutdown -r -t 00
+        exit 0
+
+userTasks:
+  - name: powershell
+    parameters:
+      command: |
+        # Install WSL2 distros
+        wsl --install -d Ubuntu-22.04;
+        
+        # Install VSCode extensions
+        code --install-extension ms-python.python;
+        code --install-extension ms-vscode-remote.remote-wsl;
+        code --install-extension d-biehl.robotcode;
+        shutdown -r -t 00
+        exit 0
