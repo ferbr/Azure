@@ -1,5 +1,5 @@
 $schema: "1.0"
-name: "CustomPaulo-devbox-customization"
+name: "ID-Custom2"
 image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
 tasks:
   - name: winget
