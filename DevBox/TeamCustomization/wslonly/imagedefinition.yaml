@@ -1,0 +1,16 @@
+$schema: "1.0"
+name: "WSLOnly-devbox-customization"
+
+tasks:
+  - name: powershell
+    parameters:
+      command: |
+        # Install WSL2 distros
+        wsl --install -d Ubuntu-22.04;
+        
+        # Install VSCode extensions
+        code --install-extension ms-python.python;
+        code --install-extension ms-vscode-remote.remote-wsl;
+        code --install-extension d-biehl.robotcode;
+        shutdown -r -t 00
+        exit 0
