@@ -1,0 +1,39 @@
+$schema: "1.0"
+name: Choco-and-Apps-TeamCustomization
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc
+
+userTasks:
+  - name:  ~/powershell
+    description: Install Chocolatey
+    parameters:
+      command: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force; 
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+          Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+          Start-Sleep -Seconds 30
+          exit 0        
+
+  - name: ~/powershell
+    description: Install Docker Desktop
+    parameters:
+      command: |
+        choco install docker-desktop -y --no-progress
+        net localgroup docker-users "NT AUTHORITY\Authenticated Users" /ADD
+        Start-Sleep -Seconds 10
+        exit 0
+
+  - name: ~/powershell
+    description: Install Git
+    parameters:
+      command: |
+        choco install git -y --no-progress
+        Start-Sleep -Seconds 10
+        exit 0
+
+  - name: ~/powershell
+    description: Install Nginx Service
+    parameters:
+      command: |
+        choco install nginx-service -y --no-progress
+        Start-Sleep -Seconds 10
+        exit 0
