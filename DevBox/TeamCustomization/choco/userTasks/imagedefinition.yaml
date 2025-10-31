@@ -1,8 +1,8 @@
 $schema: "1.0"
-name: UserTasks-Choco-and-Apps-TeamCustomization
+name: Choco-and-Apps-TeamCustomization
 image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc
 
-userTasks:
+Tasks:
   - name:  ~/powershell
     description: Install Chocolatey
     parameters:
@@ -13,6 +13,7 @@ userTasks:
           Start-Sleep -Seconds 30
           exit 0        
 
+userTasks:
   - name: ~/powershell
     description: Install Docker Desktop
     parameters:
