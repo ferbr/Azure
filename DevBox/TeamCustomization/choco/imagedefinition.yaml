@@ -37,3 +37,10 @@ tasks:
         choco install nginx-service -y --no-progress
         Start-Sleep -Seconds 10
         exit 0
+  
+  - name: ~/powershell
+    description: Restart to apply the installations
+    parameters:
+      command: |
+        shutdown -r -t 00
+        exit 0
