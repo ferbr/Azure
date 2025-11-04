@@ -1,0 +1,41 @@
+$schema: "1.0"
+name: Final-W11-HyperV-Choco
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
+
+tasks:
+  - name: ~/powershell
+    description: Enable Hyper-V Feature
+    parameters:
+      command: |
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -NoRestart
+        Start-Sleep -Seconds 30
+        exit 0
+  
+  - name: ~/powershell
+    description: Restart to apply Hyper-V Feature
+    parameters:
+      command: |
+        shutdown -r -t 00
+        exit 0
+
+  - name:  ~/powershell
+    description: Install Chocolatey
+    parameters:
+      command: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force; 
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+          Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+          Start-Sleep -Seconds 30
+          exit 0
+
+  - name:  ~/winget
+    description: Install VSCode
+    parameters:
+      package: Microsoft.VisualStudioCode
+  
+  - name: ~/powershell
+    description: Restart to finalize installations
+    parameters:
+      command: |
+        shutdown -r -t 00
+        exit 0
