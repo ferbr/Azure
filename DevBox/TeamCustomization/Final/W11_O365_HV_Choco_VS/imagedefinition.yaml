@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: Final-W11-HyperV-Choco-VSCode-winget
-image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc
 
 tasks:
   - name: ~/powershell
