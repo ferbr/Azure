@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: Final-W11-Winget-VSCode
-image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
 
 tasks:
   - name:  ~/powershell
@@ -24,10 +24,3 @@ tasks:
           Winget install Microsoft.VisualStudioCode --silent
           Start-Sleep -Seconds 30
           exit 0
-  
-  - name: ~/powershell
-    description: Restart to finalize installations
-    parameters:
-      command: |
-        shutdown -r -t 00
-        exit 0
