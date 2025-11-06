@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: Final-W11-HyperV-Choco-VSCode-winget
-image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-25h2-ent-cpc-m365
 
 tasks:
   - name: ~/powershell
@@ -28,14 +28,6 @@ tasks:
           Start-Sleep -Seconds 30
           exit 0
 
-  - name:  ~/winget
-    description: Install VSCode
+  - name: winget
     parameters:
       package: Microsoft.VisualStudioCode
-  
-  - name: ~/powershell
-    description: Restart to finalize installations
-    parameters:
-      command: |
-        shutdown -r -t 00
-        exit 0
