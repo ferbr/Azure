@@ -32,3 +32,8 @@ tasks:
     description: Install VSCode
     parameters:
       package: Microsoft.VisualStudioCode
+
+  - name: winget
+    description: Install GitHub CLI
+    parameters:
+      package: GitHub.cli
